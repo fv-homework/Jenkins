@@ -3,7 +3,7 @@ pipeline {
     agent any
     
     stages {
-        stage("Jfile") {
+        stage("MASTER") {
             steps {
                 sh "pwd"
             }
