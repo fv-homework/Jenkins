@@ -5,13 +5,13 @@ pipeline {
     stages {
         stage("Step1") {
             steps {
-                sh "pwd"
+                sh "echo 'jekins file'"
             }
         }
 
         stage("Step2") {
             steps {
-                sh "ls . -a"
+                sh "ls -a"
             }
         }
 
@@ -20,7 +20,5 @@ pipeline {
                 sh "pwd"
             }
         }
-
-
     }
 }
