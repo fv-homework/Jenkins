@@ -1,9 +1,9 @@
 pipeline {
 
     agent any
-    
+
     stages {
-        stage("Jfile") {
+        stage("JACK") {
             steps {
                 sh "pwd"
             }
