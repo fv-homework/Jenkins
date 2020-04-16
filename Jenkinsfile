@@ -1,17 +1,12 @@
 pipeline {
 
-        stages {
-
-            stage("Jfile") {
-
-                steps {
-
-                    sh "pwd"
-
-                }
-
+    agent any
+    
+    stages {
+        stage("Jfile") {
+            steps {
+                sh "pwd"
             }
-
         }
-
+    }
 }
