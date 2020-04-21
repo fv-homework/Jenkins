@@ -13,7 +13,7 @@ pipeline {
         stage("Step2") {
             steps {
                 echo "branch:$branch"
-                def br = sh("echo '$branch' | cut -d'/' -f 2")
+                def br = sh(script:"echo '$branch' | cut -d'/' -f 2", returnStdout: true)
                 echo "branch after:$br"
             }
         }
