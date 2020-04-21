@@ -2,15 +2,17 @@ pipeline {
 
     agent any
 
-    post {
-        always {
-            cleanWs()
-        }
-    }
-
     stages {
 
         stage("Step1") {
+
+            steps {
+                cleanWs()
+            }
+        }
+
+
+        stage("Step2") {
             steps {
                 sh "echo 'jekins file'"
                 sh "echo $branch"
@@ -18,12 +20,6 @@ pipeline {
                 sh "mkdir -p thread"
                 sh "cd thread"
                 sh "git clone https://github.com/fv-homework/Threading.git"
-            }
-        }
-
-        stage("Step2") {
-            steps {
-                sh "ls -a"
             }
         }
 
