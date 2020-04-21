@@ -6,6 +6,11 @@ pipeline {
         stage("Step1") {
             steps {
                 sh "echo 'jekins file'"
+                sh "echo $branch"
+
+                sh "mkdir -p thread"
+                sh "cd thread"
+                sh "git clone https://github.com/fv-homework/Threading.git"
             }
         }
 
