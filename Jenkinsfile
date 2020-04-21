@@ -19,9 +19,8 @@ pipeline {
             steps {
                 sh "pwd"
             }
-        }
 
-        stage("Step4") {
+        stage("Step3") {
             steps {
                 sh "echo $tag"
             }
