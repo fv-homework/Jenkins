@@ -2,6 +2,12 @@ pipeline {
 
     agent any
 
+    pres {
+        always {
+            cleanWs()
+        }
+    }
+
     stages {
 
         stage("Step1") {
