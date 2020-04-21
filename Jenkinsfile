@@ -27,6 +27,7 @@ pipeline {
 
                 sh "echo Cloning jack"
                 sh "mkdir -p jack"
+                
                 sh "echo branch:$branch"
                 sh "git clone -b $branch https://github.com/fv-homework/Jenkins.git  ./jack"
 
