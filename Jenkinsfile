@@ -20,7 +20,7 @@ pipeline {
                 sh "mkdir -p thread"
                 sh "pwd"
                 sh "cd thread"
-                sh "git clone https://github.com/fv-homework/Threading.git"
+                sh "git clone https://github.com/fv-homework/Threading.git ./thread"
             }
         }
 
