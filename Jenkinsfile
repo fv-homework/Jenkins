@@ -2,7 +2,7 @@ pipeline {
 
     agent any
 
-    pre {
+    post {
         always {
             cleanWs()
         }
