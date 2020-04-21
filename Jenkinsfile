@@ -5,7 +5,6 @@ pipeline {
     stages {
 
         stage("Step1") {
-
             steps {
                 cleanWs()
             }
@@ -13,12 +12,8 @@ pipeline {
 
         stage("Step2") {
             steps {
-
                 echo "branch:$branch"
             }
-        }
-
-
         }
     }
 }
