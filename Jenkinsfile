@@ -14,7 +14,7 @@ pipeline {
         stage("Step2") {
             steps {
 
-                sh "Cloning thread"
+                sh "echo Cloning thread"
                 sh "mkdir -p thread"
                 sh "pwd"
                 sh "cd thread"
@@ -25,7 +25,7 @@ pipeline {
         stage("Step3") {
             steps {
 
-                sh "Cloning jack"
+                sh "echo Cloning jack"
                 sh "mkdir -p jack"
                 sh "clone https://github.com/fv-homework/Jenkins.git $branch ./jack"
 
