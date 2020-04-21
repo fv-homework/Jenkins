@@ -11,9 +11,11 @@ pipeline {
         }
 
         stage("Step2") {
+            environment {
+                def br = sh(script:"echo '$branch' | cut -d'/' -f 2", returnStdout: true)
+            } 
             steps {
                 echo "branch:$branch"
-                def br = sh(script:"echo '$branch' | cut -d'/' -f 2", returnStdout: true)
                 echo "branch after:$br"
             }
         }
