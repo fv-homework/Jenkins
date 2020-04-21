@@ -3,6 +3,7 @@ pipeline {
     agent any
 
     stages {
+        
         stage("Step1") {
             steps {
                 sh "echo 'jekins file'"
@@ -24,6 +25,7 @@ pipeline {
             steps {
                 sh "pwd"
             }
+        }
 
         stage("Step3") {
             steps {
