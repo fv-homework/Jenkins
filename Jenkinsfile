@@ -17,9 +17,15 @@ pipeline {
             steps {
                 echo "branch:$branch"
                 echo "branch after:$br"
+
             }
         }
 
+        stage("Checkout ") {
+            steps {
+                sh "git clone https://github.com/fv-homework/Jenkins.git"
+            }
+        }
         stage("Step3") {
             steps {
                 sh(script:"./scripts/tagManager.sh", returnStdout: true)
