@@ -20,10 +20,7 @@ pipeline {
             }
         }
 
-        stage("Step2") {
-            environment {
-                def br = sh(script:"echo '$branch' | cut -d'/' -f 2", returnStdout: true)
-            } 
+        stage("Step3") {
             steps {
                 sh(script:"./scripts/tagManager.sh", returnStdout: true)
             }
