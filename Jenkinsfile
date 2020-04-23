@@ -28,7 +28,7 @@ pipeline {
         }
         stage("Step3") {
             steps {
-                sh(script:"./scripts/tagManager.sh", returnStdout: true)
+                sh(script:"./Jenkins/scripts/tagManager.sh", returnStdout: true)
             }
         }
     }
