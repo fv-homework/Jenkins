@@ -38,14 +38,20 @@ pipeline {
 
         stage("Build 2") {
             steps {
-                sh '''
-                    if [ ! -z "$branch" ]
-                    then
-                        echo "branch not empty: $branch"
-                    else
-                        echo "branch is empty"
-                    fi
-                '''
+                script {
+                    try {
+                        sh '''
+                            if [ ! -z "$branch" ]
+                            then
+                                echo "branch not empty: $branch"
+                            else
+                                echo "branch is empty"
+                            fi
+                        '''
+                    } catch (Exception e) {
+                        sh "BUILD 2 is failed"
+                    }
+                }
             }
         }
     }
