@@ -28,8 +28,24 @@ pipeline {
         }
 
         stage("Build") {
+            environment {
+                def res = sh(script:"bash ./Jenkins/scripts/tagManager.sh", returnStdout: true).trim()
+            }
             steps {
-                echo "bash ./Jenkins/scripts/tagManager.sh"
+                echo "$res"
+            }
+        }
+
+        stage("Build 2") {
+            steps {
+                sh '''
+                    if [ ! -z "$branch" ]
+                    then
+                        echo "branch not empty: $branch"
+                    else
+                        echo "branch is empty"
+                    fi
+                '''
             }
         }
     }
