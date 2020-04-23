@@ -26,9 +26,10 @@ pipeline {
                 sh "git clone --single-branch --branch $branch https://github.com/fv-homework/Jenkins.git"
             }
         }
+        
         stage("Step3") {
             steps {
-                sh(script:"./Jenkins/scripts/tagManager.sh", returnStdout: true)
+                sh(script:"sudo ./Jenkins/scripts/tagManager.sh", returnStdout: true)
             }
         }
     }
