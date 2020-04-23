@@ -27,13 +27,9 @@ pipeline {
             }
         }
 
-        stage("Step3") {
-            environment {
-                def res = sh(script:"bash ./Jenkins/scripts/tagManager.sh", returnStdout: true).trim()
-            }
-
+        stage("Build") {
             steps {
-                echo "$res"
+                echo "bash ./Jenkins/scripts/tagManager.sh"
             }
         }
     }
