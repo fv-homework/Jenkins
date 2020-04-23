@@ -23,7 +23,7 @@ pipeline {
 
         stage("Checkout ") {
             steps {
-                sh "git clone https://github.com/fv-homework/Jenkins.git $branch ."
+                sh "git clone https://github.com/fv-homework/Jenkins.git $branch"
             }
         }
         stage("Step3") {
