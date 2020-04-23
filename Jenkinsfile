@@ -29,7 +29,7 @@ pipeline {
 
         stage("Step3") {
             steps {
-                sh(script:"bash ./Jenkins/scripts/tagManager.sh", returnStdout: true)
+                def res = sh(script:"bash ./Jenkins/scripts/tagManager.sh", returnStdout: true).trim()
             }
         }
     }
