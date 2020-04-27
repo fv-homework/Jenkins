@@ -45,6 +45,7 @@ pipeline {
 
                         for ( String n : list) {
                             println n
+                            sh "echo $n"
                         }
 
                     } catch (Exception e) {
