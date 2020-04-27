@@ -43,6 +43,9 @@ pipeline {
 
                         def list = [ "fede", "rico" ]
 
+                        //List<String> list = new ArrayList<String>()
+                        list.add("Virgili")
+
                         for ( String n : list) {
                             println n
                             sh "echo $n"
