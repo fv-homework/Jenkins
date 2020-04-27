@@ -43,13 +43,13 @@ pipeline {
 
                         def list = [ "fede", "rico" ]
 
-                        for (String n : $list) {
-                            echo $n
+                        for ( String n : list) {
+                            println n
                         }
 
                     } catch (Exception e) {
 
-
+                        sh "No correct"
                     }
                 }s
             }
