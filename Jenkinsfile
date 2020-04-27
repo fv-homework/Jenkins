@@ -40,18 +40,18 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh '''
-                            if [ ! -z "$branch" ]
-                            then
-                                echo "branch not empty: $branch"
-                            else
-                                echo "branch is empty"
-                            fi
-                        '''
+
+                        def list = [ "fede", "rico" ]
+
+                        for (String n : $list) {
+                            echo $n
+                        }
+
                     } catch (Exception e) {
-                        sh "BUILD 2 is failed"
+
+
                     }
-                }
+                }s
             }
         }
     }
