@@ -2,6 +2,12 @@ pipeline {
 
     agent any
 
+    environment {
+
+        def var1 = true
+        def var2 = false
+    }
+
     stages {
 
         stage("Step1") {
@@ -57,6 +63,25 @@ pipeline {
                     }
                 }
             }
+        }
+
+        stage("Build 3")  {
+
+            steps {
+
+                script {
+
+                    if ( var1 == false ) && ( var2 == true ) {
+
+                        echo "false / true"
+                    } else {
+                        echo " true false "
+                    }
+
+                }
+
+            }
+
         }
     }
 }
