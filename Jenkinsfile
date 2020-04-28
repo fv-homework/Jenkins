@@ -57,6 +57,8 @@ pipeline {
                             sh "echo $n"
                         }
 
+                        sh "false"
+
                     } catch (Exception e) {
 
                         sh "No correct"
@@ -69,7 +71,7 @@ pipeline {
             steps {
                 script {
 
-                    sh "false"
+                    sh "echo prova"
                     //failFast: true
 
                 }
