@@ -67,9 +67,9 @@ pipeline {
 
         stage("build")  {
             steps {
-                failFast: true
                 script {
                     sh "echo prova"
+                    failFast: true
                 }
             }
         }
