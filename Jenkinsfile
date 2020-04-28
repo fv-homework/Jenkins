@@ -71,7 +71,7 @@ pipeline {
 
                 script {
 
-                    if ( var1 == false ) && ( var2 == true ) {
+                    if ( "$var1" == false && "$var2" == true ) {
 
                         echo "false / true"
                     } else {
