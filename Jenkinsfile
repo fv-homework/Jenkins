@@ -68,8 +68,10 @@ pipeline {
         stage("build")  {
             steps {
                 script {
-                    sh "echo prova"
+
                     failFast: true
+                    sh "false"
+
                 }
             }
         }
