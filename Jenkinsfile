@@ -81,6 +81,7 @@ pipeline {
 
                             echo " true false "
                             sh "exit 1"
+                            Build.result=false
                         }
 
                     } catch (Exception e) {
