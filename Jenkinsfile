@@ -69,8 +69,9 @@ pipeline {
             steps {
                 script {
 
-                    failFast: true
+                    
                     sh "false"
+                    failFast: true
 
                 }
             }
