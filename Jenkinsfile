@@ -80,7 +80,7 @@ pipeline {
                         } else {
 
                             echo " true false "
-                            sh "false"
+                            sh "exit 1"
                         }
 
                     } catch (Exception e) {
