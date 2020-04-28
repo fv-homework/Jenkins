@@ -68,10 +68,10 @@ pipeline {
         stage("build")  {
 
             steps {
-
+                fastFail:true
                 script {
 
-                    fastFail:true
+                    
                     try {
 
                         if ( "$var1" == false && "$var2" == true ) {
