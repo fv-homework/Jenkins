@@ -65,7 +65,7 @@ pipeline {
             }
         }
 
-        stage("Build 3")  {
+        stage("build")  {
 
             steps {
 
@@ -80,8 +80,8 @@ pipeline {
                         } else {
 
                             echo " true false "
-                            sh "exit 1"
-                            Build.result=false
+                            sh "exit 0"
+                            build.result=false
                         }
 
                     } catch (Exception e) {
