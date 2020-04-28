@@ -66,27 +66,10 @@ pipeline {
         }
 
         stage("build")  {
-            failFast: true
             steps {
                 failFast: true
                 script {
-                    try {
-
-                        if ( "$var1" == false && "$var2" == true ) {
-
-                            echo "false / true"
-
-                        } else {
-
-                            echo " true false "
-                            sh "exit 0"
-                            build.result=false
-                        }
-
-                    } catch (Exception e) {
-
-                        echo "error"
-                    }
+                    sh "echo prova"
                 }
             }
         }
