@@ -71,6 +71,7 @@ pipeline {
 
                 script {
 
+                    fastfail:true
                     try {
 
                         if ( "$var1" == false && "$var2" == true ) {
