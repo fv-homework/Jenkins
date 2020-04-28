@@ -71,12 +71,22 @@ pipeline {
 
                 script {
 
-                    if ( "$var1" == false && "$var2" == true ) {
+                    try {
 
-                        echo "false / true"
-                    } else {
-                        echo " true false "
+                        if ( "$var1" == false && "$var2" == true ) {
+
+                            echo "false / true"
+
+                        } else {
+
+                            echo " true false "
+                        }
+
+                    } catch (Exception e) {
+
+                        echo "error"
                     }
+
 
                 }
 
