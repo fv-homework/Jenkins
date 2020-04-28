@@ -66,7 +66,7 @@ pipeline {
         }
 
         stage("build")  {
-
+            failFast: true
             steps {
                 failFast: true
                 script {
