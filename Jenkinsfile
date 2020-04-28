@@ -68,10 +68,8 @@ pipeline {
         stage("build")  {
 
             steps {
-                fastFail params.FAIL_FAST
+                failFast: true
                 script {
-
-                    
                     try {
 
                         if ( "$var1" == false && "$var2" == true ) {
@@ -89,12 +87,8 @@ pipeline {
 
                         echo "error"
                     }
-
-
                 }
-
             }
-
         }
     }
 }
