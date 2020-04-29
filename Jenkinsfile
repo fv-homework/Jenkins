@@ -73,6 +73,10 @@ pipeline {
 
                         echo "VAR1 TRUE"
 
+                    } else {
+
+                        echo "VAR1 FALSE"
+
                     }
 
                 }
