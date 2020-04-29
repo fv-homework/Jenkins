@@ -69,7 +69,7 @@ pipeline {
             steps {
                 script {
 
-                    if ( var1 == true ) {
+                    if ( $var1 == true ) {
 
                         echo "VAR1 TRUE"
 
