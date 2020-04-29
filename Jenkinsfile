@@ -57,8 +57,6 @@ pipeline {
                             sh "echo $n"
                         }
 
-                        sh "false"
-
                     } catch (Exception e) {
 
                         sh "No correct"
