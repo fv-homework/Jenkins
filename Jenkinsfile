@@ -71,8 +71,11 @@ pipeline {
             steps {
                 script {
 
-                    sh "echo prova"
-                    //failFast: true
+                    if ( var1 == true ) {
+
+                        echo "VAR1 TRUE"
+
+                    }
 
                 }
             }
