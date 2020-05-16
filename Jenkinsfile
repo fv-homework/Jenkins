@@ -22,11 +22,11 @@ pipeline {
                 def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
                  parameters: [
-                 [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Path of config file', name: 'Config'],
-                 [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Test Info file', name: 'Test']
+                 [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'FRAMEWORK', name: 'toolsVersion'],
+                 [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'ADS EXTERNAL PACKAGE', name: 'adsVersion']
                 ])
-                echo ("IQA Sheet Path: "+userInput['Config'])
-                echo ("Test Info file path: "+userInput['Test'])
+                echo ("FRAMEWORK:"+userInput['toolsVersion'])
+                echo ("ADS:"+userInput['adsVersion'])
 
                 }
             }
