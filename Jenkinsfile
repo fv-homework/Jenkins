@@ -22,8 +22,8 @@ pipeline {
                 def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
                  parameters: [
-                 [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'FRAMEWORK', name: 'toolsVersion'],
-                 [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'ADS EXTERNAL PACKAGE', name: 'adsVersion']
+                 [$class: 'String', defaultValue: 'None', description: 'FRAMEWORK', name: 'toolsVersion'],
+                 [$class: 'String', defaultValue: 'None', description: 'ADS EXTERNAL PACKAGE', name: 'adsVersion']
                 ])
                 echo ("FRAMEWORK:"+userInput['toolsVersion'])
                 echo ("ADS:"+userInput['adsVersion'])
