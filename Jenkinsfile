@@ -18,9 +18,10 @@ pipeline {
 
         stage {
             steps {
+
                 scripts {
 
-                    userInput = input(
+                    def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
                  parameters: [
                  [$class: 'TextParameterDefinition', defaultValue: 'None', 
