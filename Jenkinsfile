@@ -16,71 +16,22 @@ pipeline {
             }
         }
 
-        stage("Step2") {
-            environment {
-                def br = sh(script:"echo '$branch' | cut -d'/' -f 2", returnStdout: true)
+        stage {
+            steps {
+                scripts {
+
+                    userInput = input(
+                 id: 'userInput', message: 'Enter path of test reports:?', 
+                 parameters: [
+                 [$class: 'TextParameterDefinition', defaultValue: 'None', 
+                    description: 'Path of config file', name: 'Config'],
+                 [$class: 'TextParameterDefinition', defaultValue: 'None', 
+                    description: 'Test Info file', name: 'Test']
+                ])
+                    echo ("IQA Sheet Path: "+userInput['Config'])
+                    echo ("Test Info file path: "+userInput['Test'])
+                }
             } 
-            steps {
-                echo "branch:$branch"
-                echo "branch after:$br"
 
-            }
-        }
-
-        stage("Checkout ") {
-            steps {
-                sh "git clone --single-branch --branch $branch https://github.com/fv-homework/Jenkins.git"
-            }
-        }
-
-        stage("Build") {
-            environment {
-                def res = sh(script:"bash ./Jenkins/scripts/tagManager.sh", returnStdout: true).trim()
-            }
-            steps {
-                echo "$res"
-            }
-        }
-
-        stage("Build 2") {
-            steps {
-                script {
-                    try {
-
-                        def list = [ "fede", "rico" ]
-
-                        //List<String> list = new ArrayList<String>()
-                        list.add("Virgili")
-
-                        for ( String n : list) {
-                            println n
-                            sh "echo $n"
-                        }
-
-                    } catch (Exception e) {
-
-                        sh "No correct"
-                    }
-                }
-            }
-        }
-
-        stage("build")  {
-            steps {
-                script {
-
-                    if ( "$var1" == "true" ) {
-
-                        echo "VAR1 TRUE"
-
-                    } else {
-
-                        echo "VAR1 FALSE"
-
-                    }
-
-                }
-            }
-        }
     }
 }
