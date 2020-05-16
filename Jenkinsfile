@@ -32,6 +32,6 @@ pipeline {
                     echo ("Test Info file path: "+userInput['Test'])
                 }
             } 
-
+        }   
     }
 }
