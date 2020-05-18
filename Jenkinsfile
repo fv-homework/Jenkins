@@ -19,7 +19,7 @@ pipeline {
         stage("Interactive_Input") {
             steps {
                 script {
-
+                sh "pwd"
                 def xmlinput = sh(script:"cat ./xmlfile.xml", returnStdout: true).trim()
                 def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
