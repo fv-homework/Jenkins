@@ -19,7 +19,7 @@ pipeline {
         stage("Interactive_Input") {
             steps {
                 script {
-                echo "checkoput"
+                echo "clone"
                 sh "git clone https://github.com/fv-homework/Jenkins.git --branch jackparams"
                 def xmlinput = sh(script:"cat ./xmlfile.xml", returnStdout: true).trim()
                 def userInput = input(
