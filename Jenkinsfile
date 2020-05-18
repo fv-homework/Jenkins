@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                 echo "checkoput"
-                sh "git checkout jackparams"
+                sh "git clone https://github.com/fv-homework/Jenkins.git --branch jackparams"
                 def xmlinput = sh(script:"cat ./xmlfile.xml", returnStdout: true).trim()
                 def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
