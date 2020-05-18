@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
 
-                def xmlinput = sh(script:"cat xmlfile.xml", returnStdout: true).trim()
+                def xmlinput = sh(script:"cat ./xmlfile.xml", returnStdout: true).trim()
                 def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
                  parameters: [
