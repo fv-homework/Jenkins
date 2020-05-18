@@ -19,12 +19,14 @@ pipeline {
         stage("Interactive_Input") {
             steps {
                 script {
+
+                def xmlinput = sh(scripts:"cat ./scripts/xmlfile.xml", returnStdout: true).trim()
                 def userInput = input(
                  id: 'userInput', message: 'Enter path of test reports:?', 
                  parameters: [
                  string(defaultValue: 'None', description: 'FRAMEWORK', name: 'toolsVersion'),
                  string(defaultValue: 'None', description: 'ADS EXTERNAL PACKAGE', name: 'adsVersion'),
-                [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Xml show', name: 'XmlContent']
+                [$class: 'TextParameterDefinition', defaultValue: "$xmlinput", description: 'Xml show', name: 'XmlContent']
 
                 ])
                 echo ("FRAMEWORK:"+userInput['toolsVersion'])
