@@ -36,7 +36,7 @@ pipeline {
                     """ 
 
                     sh script:$/
-                    sed -i "s/PLM=\"prova\"/PLM=${name}/" ./Jenkins/file.xml
+                    sed -i "s/PLM=\"prova\"/PLM=${name}/" ./file.xml
                     /$
 
                 }
