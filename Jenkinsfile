@@ -34,8 +34,9 @@ pipeline {
                     git checkout $branch
 
                     """ 
-
+                    
                     sh script:$/
+                    cd Jenkins
                     sed -i "s/PLM=\"prova\"/PLM=${name}/" ./file.xml
                     /$
 
