@@ -23,7 +23,7 @@ pipeline {
 
                 script {
 
-                    sh "pwd"
+                    sh "cd ..;ls ."
 
                 }
 
