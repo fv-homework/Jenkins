@@ -33,6 +33,8 @@ pipeline {
 
                     ls . 
 
+                    cat file.xml | grep PLM | cut -d'=' -f 1
+
                     """
 
                 }
