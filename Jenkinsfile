@@ -23,7 +23,8 @@ pipeline {
 
                 script {
 
-                    sh "cd ..;ls ."
+                    sh "git checkout $branch"
+                    sh "ls ."
 
                 }
 
