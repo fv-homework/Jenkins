@@ -23,7 +23,7 @@ pipeline {
 
                 script {
 
-                    sh "cat file.xml"
+                    sh "ls"
 
                 }
 
