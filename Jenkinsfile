@@ -23,7 +23,7 @@ pipeline {
 
                 script {
 
-                    sh "cut file.xml"
+                    sh "cat file.xml"
 
                 }
 
