@@ -27,7 +27,9 @@ pipeline {
 
                     git clone https://github.com/fv-homework/Jenkins.git
 
-                    git checkout jackparams
+                    cd Jenkins
+
+                    git checkout $branch
 
                     ls . 
 
