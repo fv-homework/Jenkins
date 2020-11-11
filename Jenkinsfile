@@ -35,7 +35,12 @@ pipeline {
 
                     """ 
 
-                    sh script:$/sed -i "s/PLM=\"prova\"/PLM=${name}/" ./file.xml/$
+                    sh "ls ."
+
+                    def out = ""
+
+                    out = sh(script:$/sed -i "s/PLM=\"prova\"/PLM=${name}/" ./file.xml/$, returnStdout: true).trim()
+
 
                 }
 
