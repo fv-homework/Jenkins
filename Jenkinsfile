@@ -33,7 +33,8 @@ pipeline {
                     dir('./Jenkins') {
 
                         def out = ''
-                        out = sh(script:$/sed -i "s/PLM=\"prova\"/PLM=${name}/" ./file.xml/$, returnStdout: true).trim()
+                        def file = "./file.txt"
+                        out = sh(script:$/sed -i "s/PLM=\"prova\"/PLM=${name}/" "${file}"/$, returnStdout: true).trim()
 
                     } 
 
