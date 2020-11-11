@@ -23,6 +23,8 @@ pipeline {
 
                 script {
 
+                    def name="vaffanculo"
+
                     sh """
 
                     git clone https://github.com/fv-homework/Jenkins.git
@@ -33,8 +35,9 @@ pipeline {
 
                     ls . 
 
-                    cat file.xml | grep PLM | cut -d'=' -f 2
+                    sed -i "s/PLM=\"prova\"/PLM=\"${name}\"/g" file.xml
 
+                    cat file.xml
                     """
 
                 }
