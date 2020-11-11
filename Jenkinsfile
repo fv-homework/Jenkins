@@ -33,12 +33,11 @@ pipeline {
 
                     git checkout $branch
 
-                    ls . 
+                    """ 
 
+                    sh /$ 
                     sed -i 's/PLM=\"prova\"/PLM=${name}/g' ./Jenkins/file.xml
-
-                    cat file.xml
-                    """
+                    /$
 
                 }
 
