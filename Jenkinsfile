@@ -1,29 +1,22 @@
 pipeline {
-
     agent any
 
     environment {
-
         def var1 = true
         def var2 = false
     }
 
     stages {
-
-        stage("Step1") {
+        stage('Step1') {
             steps {
                 cleanWs()
             }
         }
 
-
-        stage("sed") {
-
+        stage('sed') {
             steps {
-
                 script {
-
-                    def name="vaffanculo"
+                    def name = 'vaffanculo'
 
                     sh """
 
@@ -33,19 +26,19 @@ pipeline {
 
                     git checkout $branch
 
-                    """ 
+                    """
 
-                    sh "ls ."
+                    sh 'ls .'
 
-                    def out = ""
+                    dir('./Jenkins') {
 
-                    out = sh(script:$/sed -i "s/PLM=\"prova\"/PLM=${name}/" ./Jenkins/file.xml/$, returnStdout: true).trim()
+                        def out = ''
+                        out = sh(script:$/sed -i "s/PLM=\"prova\"/PLM=${name}/" ./file.xml/$, returnStdout: true).trim()
 
+                    } 
 
                 }
-
             }
-
         }
 
         // stage("Interactive_Input") {
@@ -55,7 +48,7 @@ pipeline {
         //         sh "git clone https://github.com/fv-homework/Jenkins.git --branch jackparams"
         //         def xmlinput = sh(script:"cat ./Jenkins/xmlfile.xml", returnStdout: true).trim()
         //         def userInput = input(
-        //          id: 'userInput', message: 'Enter path of test reports:?', 
+        //          id: 'userInput', message: 'Enter path of test reports:?',
         //          parameters: [
         //          string(defaultValue: 'None', description: 'FRAMEWORK', name: 'toolsVersion'),
         //          string(defaultValue: 'None', description: 'ADS EXTERNAL PACKAGE', name: 'adsVersion'),
@@ -67,6 +60,6 @@ pipeline {
 
         //         }
         //     }
-        // } 
+        // }
     }
 }
