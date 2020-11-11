@@ -23,8 +23,15 @@ pipeline {
 
                 script {
 
-                    sh "git checkout $branch"
-                    sh "ls ."
+                    sh """
+
+                    git clone https://github.com/fv-homework/Jenkins.git
+
+                    git checkout jackparams
+
+                    ls . 
+
+                    """
 
                 }
 
