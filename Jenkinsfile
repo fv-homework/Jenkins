@@ -1,4 +1,4 @@
-groovy-lib@master
+@Library groovy-lib@master
 
 pipeline {
 
