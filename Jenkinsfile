@@ -9,8 +9,14 @@ pipeline {
             steps {
                 sh "pwd"
 
-                gitUtils.checkout("errorHandler")
-                
+                script {
+
+                    gitUtils.checkout("errorHandler")
+                    
+                }
+
+      
+
             }
         }
     }
