@@ -1,4 +1,4 @@
-//(@Library ('groovy-lib')
+@Library ('groovy-lib')
 
 pipeline {
 
