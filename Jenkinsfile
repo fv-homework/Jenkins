@@ -1,4 +1,4 @@
-@Library ('groovy-lib') gitUtils
+@Library ('groovy-lib')
 
 pipeline {
 
