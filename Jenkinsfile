@@ -1,9 +1,11 @@
+groovy-lib@master
+
 pipeline {
 
     agent any
     
     stages {
-        stage("MASTER") {
+        stage("ERROR HANDLER") {
             steps {
                 sh "pwd"
             }
