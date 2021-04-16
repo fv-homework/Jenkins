@@ -8,6 +8,9 @@ pipeline {
         stage("ERROR HANDLER") {
             steps {
                 sh "pwd"
+
+                gitUtils.checkout("errorHandler")
+                
             }
         }
     }
